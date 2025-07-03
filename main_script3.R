@@ -27,8 +27,7 @@ source("RD_and_DT_Algorithm_copy.R")  # Ensure this file is in the same director
 
 lambda <- 2
 
-
-results_1 <- data.frame(
+results_6 <- data.frame(
   Run = integer(),
   N_c = integer(),
   Length = numeric(),
@@ -39,25 +38,23 @@ results_1 <- data.frame(
 
 for (i in 1:100) {
   set.seed(i)
-  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 25)
+  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 150)
   result <- RD_Alg_C(obs_gen_para, lambda)
   
-  results_1[i, ] <- list(
+  results_6[i, ] <- list(
     Run = i,
-    N_c = 25,
+    N_c = 150,
     Length = result$Length_total,
     Cost = result$Cost_total,
     NumDisambigs = length(result$Disambiguate_state)
   )
 }
 
-saveRDS(results_1, file.path(output_dir, "data_50_4_1.rds"))
+saveRDS(results_6, file.path(output_dir, "data_50_4_6.rds"))
 
 
 
-
-
-results_2 <- data.frame(
+results_7 <- data.frame(
   Run = integer(),
   N_c = integer(),
   Length = numeric(),
@@ -68,28 +65,24 @@ results_2 <- data.frame(
 
 for (i in 1:100) {
   set.seed(i)
-  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 50)
+  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 175)
   result <- RD_Alg_C(obs_gen_para, lambda)
   
-  results_2[i, ] <- list(
+  results_7[i, ] <- list(
     Run = i,
-    N_c = 50,
+    N_c = 175,
     Length = result$Length_total,
     Cost = result$Cost_total,
     NumDisambigs = length(result$Disambiguate_state)
   )
 }
 
-saveRDS(results_2, file.path(output_dir, "data_50_4_2.rds"))
+saveRDS(results_7, file.path(output_dir, "data_50_4_7.rds"))
 
 
 
 
-
-
-
-
-results_3 <- data.frame(
+results_8 <- data.frame(
   Run = integer(),
   N_c = integer(),
   Length = numeric(),
@@ -100,25 +93,25 @@ results_3 <- data.frame(
 
 for (i in 1:100) {
   set.seed(i)
-  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 75)
+  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 200)
   result <- RD_Alg_C(obs_gen_para, lambda)
   
-  results_3[i, ] <- list(
+  results_8[i, ] <- list(
     Run = i,
-    N_c = 75,
+    N_c = 200,
     Length = result$Length_total,
     Cost = result$Cost_total,
     NumDisambigs = length(result$Disambiguate_state)
   )
 }
 
-saveRDS(results_3, file.path(output_dir, "data_50_4_3.rds"))
+saveRDS(results_8, file.path(output_dir, "data_50_4_8.rds"))
 
 
 
 
 
-results_4 <- data.frame(
+results_9 <- data.frame(
   Run = integer(),
   N_c = integer(),
   Length = numeric(),
@@ -129,60 +122,22 @@ results_4 <- data.frame(
 
 for (i in 1:100) {
   set.seed(i)
-  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 100)
+  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 225)
   result <- RD_Alg_C(obs_gen_para, lambda)
   
-  results_4[i, ] <- list(
+  results_9[i, ] <- list(
     Run = i,
-    N_c = 100,
+    N_c = 225,
     Length = result$Length_total,
     Cost = result$Cost_total,
     NumDisambigs = length(result$Disambiguate_state)
   )
 }
 
-saveRDS(results_4, file.path(output_dir, "data_50_4_4.rds"))
+saveRDS(results_9, file.path(output_dir, "data_50_4_9.rds"))
 
+results <- rbind(results_6, results_7, results_8, results_9)
 
-
-
-
-
-
-results_5 <- data.frame(
-  Run = integer(),
-  N_c = integer(),
-  Length = numeric(),
-  Cost = numeric(),
-  NumDisambigs = integer()
-)
-
-
-for (i in 1:100) {
-  set.seed(i)
-  obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 125)
-  result <- RD_Alg_C(obs_gen_para, lambda)
-  
-  results_5[i, ] <- list(
-    Run = i,
-    N_c = 125,
-    Length = result$Length_total,
-    Cost = result$Cost_total,
-    NumDisambigs = length(result$Disambiguate_state)
-  )
-}
-
-saveRDS(results_5, file.path(output_dir, "data_50_4_5.rds"))
-
-
-
-
-
-
-
-
-# Combine all results into one table
-results <- rbind(results_1, results_2, results_3, results_4, results_5)
 
 # Format output
 results_out <- data.frame(
