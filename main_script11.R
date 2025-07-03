@@ -191,7 +191,7 @@ results_out <- data.frame(
 )
 
 # Define the custom header (space-separated, quoted)
-header <- '"number of clutters" "length" "cost" "number of disambiguations"'
+header <- '"number of obstacles" "length" "cost" "number of disambiguations"'
 
 # Define output path
 txt_path <- file.path(output_dir, "result_AP_obstacle.txt")
