@@ -39,7 +39,7 @@ results_6 <- data.frame(
 for (i in 1:100) {
   set.seed(i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 150)
-  result <- AP_Alg_O(obs_gen_para, lambda)
+  result <- DT_Alg_C(obs_gen_para, lambda)
   
   results_6[i, ] <- list(
     Run = i,
@@ -66,7 +66,7 @@ results_7 <- data.frame(
 for (i in 1:100) {
   set.seed(i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 175)
-  result <- AP_Alg_O(obs_gen_para, lambda)
+  result <- DT_Alg_C(obs_gen_para, lambda)
   
   results_7[i, ] <- list(
     Run = i,
@@ -94,7 +94,7 @@ results_8 <- data.frame(
 for (i in 1:100) {
   set.seed(i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 200)
-  result <- AP_Alg_O(obs_gen_para, lambda)
+  result <- DT_Alg_C(obs_gen_para, lambda)
   
   results_8[i, ] <- list(
     Run = i,
@@ -123,7 +123,7 @@ results_9 <- data.frame(
 for (i in 1:100) {
   set.seed(i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 225)
-  result <- AP_Alg_O(obs_gen_para, lambda)
+  result <- DT_Alg_C(obs_gen_para, lambda)
   
   results_9[i, ] <- list(
     Run = i,
