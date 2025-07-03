@@ -122,7 +122,7 @@ results_9 <- data.frame(
 for (i in 1:100) {
   set.seed(i)
   obs_gen_para <- c(gamma = 0.3, d = 5, noPoints = 225)
-  result <- (obs_gen_para, lambda)
+  result <- RD_Alg_O(obs_gen_para, lambda)
   
   results_9[i, ] <- list(
     Run = i,
