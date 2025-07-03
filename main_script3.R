@@ -194,7 +194,7 @@ results_out <- data.frame(
 header <- '"number of clutters" "length" "cost" "number of disambiguations"'
 
 # Define output path
-txt_path <- file.path(output_dir, "result_AP_clutter.txt")
+txt_path <- file.path(output_dir, "result_RD_clutter.txt")
 
 # Write header manually
 writeLines(header, txt_path)
